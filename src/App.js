@@ -30,11 +30,18 @@ export default function App() {
       setColorPosition(0)
     }
       total.style.color=colores[colorPosition];
+      console.log(totalTodo)
   },[totalTodo])
 
+  // Primer render
   useEffect(()=>{
     console.log('Primer render')
   },[])
+
+  // Por cada cambio 
+  useEffect(()=>{
+    console.log('has cambiado algo')
+  })
 
   return (
     <div className="app">
@@ -49,7 +56,8 @@ export default function App() {
       <ul>
       {todos.map(todo =>(
         <div className="todoContainer">
-          <li className="todoItem" key={todo}>{todo}</li>
+          <li className="todoItem" >{todo}</li>
+          {/* key={todo} */}
           <button className="todoButton" onClick={() => deleteTodo(todo)}>x</button>          
         </div>
         ))}
