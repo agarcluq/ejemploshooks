@@ -20,7 +20,7 @@ export default function App() {
   useEffect(()=>{
     const colores =['red','green','grey','purple']
     let total= document.getElementById('total');
-    for(let i=0; i<colores.length;){
+    for(let i=0; i<colores.length;i++){
       console.log(colores[i])
       total.style.color=colores[i+1];
 
