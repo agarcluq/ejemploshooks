@@ -5,7 +5,7 @@ import "./style.css";
 export default function App() {
 
   const [todos,setTodo]=useState([])
-  const []
+  const [totalTodo,setTotal]=useState(0)
 
   function addTodo(todo){
     setTodo([...todos,todo]);
@@ -19,7 +19,7 @@ export default function App() {
 
   useEffect(()=>{
     console.log('hola')
-  },[todo])
+  },[todos])
 
   return (
     <div className="app">
