@@ -1,7 +1,9 @@
 import React, {  useState, useEffect, useRef } from "react";
 import "./style.css";
 
-
+/**
+ * Componente Lista de la compra
+ */
 export default function App() {
   // Lista de tareas/artículos
   const [todos,setTodo]=useState([])
