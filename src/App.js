@@ -10,6 +10,7 @@ export default function App() {
   function addTodo(todo){
     setTodo([...todos,todo]);
     setTotalTodo(totalTodo+1)
+    document.getElementById("input-todo").value='';
   }
 
   function deleteTodo(todo){
@@ -29,6 +30,10 @@ export default function App() {
     }
       total.style.color=colores[colorPosition];
   },[totalTodo])
+
+  useEffect(()=>{
+    console.log('modificando')
+  })
 
   return (
     <div className="app">
