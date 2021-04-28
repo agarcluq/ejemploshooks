@@ -24,7 +24,7 @@ export default function App() {
   useEffect(()=>{
     const colores =['red','green','grey','purple']
     let total= document.getElementById('total');
-    if(colorPosition<4){
+    if(colorPosition<colores.length){
     setColorPosition(colorPosition+1)
     }else{
       setColorPosition(0)
