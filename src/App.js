@@ -9,23 +9,28 @@ export default function App() {
   const [colors,setColors]=useState(0)
   function addTodo(todo){
     setTodo([...todos,todo]);
+    setTotalTodo(totalTodo+1)
   }
 
   function deleteTodo(todo){
     var index=todos.indexOf(todo);
     todos.splice(index,1);
     setTodo([...todos])
+    setTotalTodo(totalTodo-1)
   }
 
   useEffect(()=>{
     const colores =['red','green','grey','purple']
     let total= document.getElementById('total');
-    for(let i=0; i<colores.length;i++){
-      console.log(colores[i])
-      total.style.color=colores[i+1];
+    if(colors<4){
+    setColors(colors+1)
+    }else{
+      setColors(0)
 
     }
-    
+
+      total.style.color=colores[colors];
+ 
   },[totalTodo])
 
   return (
