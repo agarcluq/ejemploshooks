@@ -5,11 +5,8 @@ h1, p, h2 {
 body{
   background-color: #ccc;
 }
-li{
-  text-decoration: none;
-}
+
 .todoItem{
-  text-decoration: none;
   margin-right: 5px;
 }
 
