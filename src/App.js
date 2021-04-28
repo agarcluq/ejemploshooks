@@ -19,7 +19,8 @@ export default function App() {
     setTodo([...todos])
     setTotalTodo(totalTodo-1)
   }
-
+  
+  // Cuando cambia el total
   useEffect(()=>{
     const colores =['red','green','grey','purple']
     let total= document.getElementById('total');
@@ -32,8 +33,8 @@ export default function App() {
   },[totalTodo])
 
   useEffect(()=>{
-    console.log('modificando')
-  })
+    console.log('Primer render')
+  },[])
 
   return (
     <div className="app">
