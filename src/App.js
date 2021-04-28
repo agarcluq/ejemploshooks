@@ -6,7 +6,7 @@ export default function App() {
 
   const [todos,setTodo]=useState([])
   const [totalTodo,setTotalTodo]=useState(0)
-  const [colors,setColors]=useState(0)
+  const [colorPosition,setColorPosition]=useState(0)
   function addTodo(todo){
     setTodo([...todos,todo]);
     setTotalTodo(totalTodo+1)
@@ -22,15 +22,12 @@ export default function App() {
   useEffect(()=>{
     const colores =['red','green','grey','purple']
     let total= document.getElementById('total');
-    if(colors<4){
-    setColors(colors+1)
+    if(colorPosition<4){
+    setColorPosition(colorPosition+1)
     }else{
-      setColors(0)
-
+      setColorPosition(0)
     }
-
-      total.style.color=colores[colors];
- 
+      total.style.color=colores[colorPosition];
   },[totalTodo])
 
   return (
