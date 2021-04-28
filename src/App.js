@@ -3,24 +3,29 @@ import "./style.css";
 
 
 export default function App() {
-
+  // Lista de tareas/artículos
   const [todos,setTodo]=useState([])
+  // Contador de tareas/artículos
   const [totalTodo,setTotalTodo]=useState(0)
+
+  // Posición de los colores
   const [colorPosition,setColorPosition]=useState(0)
-  function addTodo(todo){
+
+  // Añadir artículo
+  const addTodo = (todo) => {
     setTodo([...todos,todo]);
     setTotalTodo(totalTodo+1)
     document.getElementById("input-todo").value='';
   }
-
-  function deleteTodo(todo){
+  // Eliminar artículo
+  const deleteTodo = (todo) => {
     var index=todos.indexOf(todo);
     todos.splice(index,1);
     setTodo([...todos])
     setTotalTodo(totalTodo-1)
   }
-  
-  // Cuando cambia el total
+
+  // Efecto que depende del total de artículos
   useEffect(()=>{
     const colores =['red','green','grey','purple']
     let total= document.getElementById('total');
@@ -33,36 +38,33 @@ export default function App() {
       console.log(totalTodo)
   },[totalTodo])
 
-  // Primer render
+  // Efecto que depende del Primer render
   useEffect(()=>{
     console.log('Primer render')
   },[])
 
-  // Por cada cambio 
+  // Efecto por cada cambio 
   useEffect(()=>{
     console.log('has cambiado algo')
   })
 
   return (
     <div className="app">
-    <h2>Mi lista de la compra🛒</h2>
-
+      <h2>Mi lista de la compra🛒</h2>
       <input type="text" id="input-todo"/>
-
       <button 
       onClick={() => {addTodo(document.getElementById("input-todo").value)}}>
       Añadir artículo</button>
-      <p >Has añadido <span id="total">{totalTodo}</span> artículos</p>
+
+      <p>Has añadido <span id="total">{totalTodo}</span> artículos</p>
       <ul>
       {todos.map(todo =>(
         <div className="todoContainer">
-          <li className="todoItem" >{todo}</li>
-          {/* key={todo} */}
+          <li className="todoItem" key={todo}>{todo}</li>
           <button className="todoButton" onClick={() => deleteTodo(todo)}>x</button>          
         </div>
         ))}
       </ul>
-
     </div>
   );
 }
