@@ -23,9 +23,10 @@ export default function App() {
   })
   return (
     <div className="App">
+    <h2>Mi lista de la compra🛒</h2>
       <input type="text" id="input-todo"/>
       <button 
-      onClick={() => {setTodo(document.getElementById("input-todo").value)}}>Añadir tarea</button>
+      onClick={() => {setTodo(document.getElementById("input-todo").value)}}>Añadir artículo</button>
       <ul>
       {todos.map(todo =>(
         <div className="todo">
