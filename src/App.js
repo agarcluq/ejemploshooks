@@ -29,14 +29,14 @@ export default function App() {
 
   // Efecto que depende del total de artículos
   useEffect(()=>{
-    const colores =['red','green','grey','purple']
+    const colors =['red','green','grey','purple']
     let total= document.getElementById('total');
-    if(colorPosition<colores.length){
+    if(colorPosition<colors.length){
     setColorPosition(colorPosition+1)
     }else{
       setColorPosition(0)
     }
-      total.style.color=colores[colorPosition];
+      total.style.color=colors[colorPosition];
       console.log(totalTodo)
   },[totalTodo])
 
