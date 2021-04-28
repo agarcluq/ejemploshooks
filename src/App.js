@@ -9,7 +9,6 @@ export default function App() {
   const [todos,setTodo]=useState([])
   // Contador de tareas/artículos
   const [totalTodo,setTotalTodo]=useState(0)
-
   // Posición de los colores
   const [colorPosition,setColorPosition]=useState(0)
 
