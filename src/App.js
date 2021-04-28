@@ -1,10 +1,11 @@
 import React, {  useState, useEffect, useRef } from "react";
 import "./style.css";
-import { ProgressBar } from 'primereact/progressbar';
+
 
 export default function App() {
 
   const [todos,setTodo]=useState([])
+  const []
 
   function addTodo(todo){
     setTodo([...todos,todo]);
@@ -18,7 +19,7 @@ export default function App() {
 
   useEffect(()=>{
     console.log('hola')
-  },[todos])
+  },[todo])
 
   return (
     <div className="app">
