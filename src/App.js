@@ -12,15 +12,15 @@ export default function App() {
   // Posición de los colores
   const [colorPosition,setColorPosition]=useState(0)
   // Optener valor input/ acceder
-  const inputGuess = useRef();
   const inputTodo = useRef()
-  // Añadir artículo
+
+  // Método Añadir artículo
   const addTodo = (todo) => {
     setTodo([...todos,todo]);
     setTotalTodo(totalTodo+1)
     inputTodo.current.value='';
   }
-  // Eliminar artículo
+  // Método Eliminar artículo
   const deleteTodo = (todo) => {
     var index=todos.indexOf(todo);
     todos.splice(index,1);
