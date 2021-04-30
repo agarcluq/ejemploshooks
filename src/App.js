@@ -11,12 +11,14 @@ export default function App() {
   const [totalTodo,setTotalTodo]=useState(0)
   // Posición de los colores
   const [colorPosition,setColorPosition]=useState(0)
-
+  // Optener valor input/ acceder
+  const inputGuess = useRef();
+  const inputTodo = useRef()
   // Añadir artículo
   const addTodo = (todo) => {
     setTodo([...todos,todo]);
     setTotalTodo(totalTodo+1)
-    document.getElementById("input-todo").value='';
+    inputTodo.current.value='';
   }
   // Eliminar artículo
   const deleteTodo = (todo) => {
@@ -52,9 +54,9 @@ export default function App() {
   return (
     <div className="app">
       <h2>Mi lista de la compra🛒</h2>
-      <input type="text" id="input-todo"/>
+      <input ref={inputTodo} type="text" id="input-todo"/>
       <button 
-      onClick={() => {addTodo(document.getElementById("input-todo").value)}}>
+      onClick={() => {addTodo(inputTodo.current.value)}}>
       Añadir artículo</button>
 
       <p>Has añadido <span id="total">{totalTodo}</span> artículos</p>
